@@ -1,2 +1,2 @@
-export(mixRasch)
+export(getEstDetails,getItemDetails,itemFitPlot,mixRasch,personItemPlot,rICC)
 S3method(print,Rasch)

@@ -67,7 +67,8 @@ function(data, steps, max.iter=50, conv.crit=.001, model="RSM", n.c=1,
    theta.diff     <- LatentClass[[c]]$person.par$theta - old.theta
       
    max.change[c] <- max(c(abs(delta.i.diff),abs(tau.diff),abs(theta.diff)),na.rm=TRUE)
-  
+   cat("Iteration: ", iter, ", Largest Parameter Change: ", max.change[c], "\n", sep="")
+   flush.console()
  if(all(max.change < conv.crit,na.rm=TRUE)) break
  } # iterations
  } # end 1 class loop
@@ -123,7 +124,8 @@ function(data, steps, max.iter=50, conv.crit=.001, model="RSM", n.c=1,
                    latent.degen[,c] <- (LatentClass[[c]]$i.stat$S.ih[1,] > 1) & (LatentClass[[c]]$i.stat$n.ni - LatentClass[[c]]$i.stat$S.ih[1,] > 1)                   
                  }
  }
- 
+ cat("Iteration: ", iter, ", Largest Parameter Change: ", max(max.change), "\n", sep="")
+ flush.console()
  if(all(max.change < conv.crit,na.rm=TRUE)) break
  if(any(! latent.degen)) { #warning("Estimation halted. Perfect response vectors in at least one latent class.")
      warning("Perfect response vectors in at least one latent class.")
