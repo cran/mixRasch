@@ -11,8 +11,8 @@ The included function will estimate a mixture Rasch model using joint maximum li
 \tabular{ll}{
 Package: \tab mixRasch\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2014-02-13\cr
+Version: \tab 1.1\cr
+Date: \tab 2014-02-26\cr
 License: \tab GPL version 2 or newer\cr
 }
 This is an early version of the package. It currently contains only the mixRasch function. Please contact the author if you encounter any bugs or if you have questions or suggestions.

@@ -171,6 +171,7 @@ function(data, steps, max.iter=50, conv.crit=.001, model="RSM", n.c=1,
    LatentClass[[c]]$item.par$in.out <- hold[[1]]
    LatentClass[[c]]$person.par$in.out <- hold[[2]]
    rm(hold)
+         
  } # class loop for SE
 
  ######################################
@@ -208,7 +209,19 @@ function(data, steps, max.iter=50, conv.crit=.001, model="RSM", n.c=1,
    LatentClass <- person.reports(LatentClass,n.c,u.data, treat.extreme, max.iter, conv.crit, steps, as.LCA)
    matcher <- match(u.data$people,u.data$x.x) 
    class   <- class[matcher,]
-
+   
+   for(c in 1:n.c){
+   #
+   # basic item stats, by modal class
+   #
+   if(n.c > 1){
+     modalClassFlag <- class[,c] > .5
+   } else modalClassFlag <- rep(TRUE,nrow(data))	 
+   itemDesc <- itemDescriptives(LatentClass[[c]]$person.par$theta[modalClassFlag],data[modalClassFlag,])
+   LatentClass[[c]]$item.par$itemDescriptives <- itemDesc
+   rm(itemDesc)
+   }
+   
  ##################
  # Final format and class statements
  ##################

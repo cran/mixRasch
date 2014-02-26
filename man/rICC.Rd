@@ -9,7 +9,7 @@
 \usage{
 rICC(delt, theta, itemVector, xlim, ylim, plotTitle, xlab, ylab, 
      col = c("black","white"), colTheme, expectedScore=FALSE, 
-     empICC=FALSE, empOnly=FALSE, gDevice, file)
+     empICC=FALSE, empOnly=FALSE, gDevice, file, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -28,6 +28,7 @@ rICC(delt, theta, itemVector, xlim, ylim, plotTitle, xlab, ylab,
   \item{empOnly}{ A flag indicating if ONLY the empirical ICC should be produced. }
   \item{gDevice}{ Controls graphics device. Options are "screen" (default), "jpg", or "png". }
   \item{file}{ The name of the output file if a device other than "screen" is chosen. }
+  \item{...}{ Additional parameters passed to the plot command.}
 }
 \details{ The function produces an item characterisic curce plots. Both empirical and theoretical ICCs can be produced.
 }

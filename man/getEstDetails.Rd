@@ -16,10 +16,11 @@ getEstDetails(raschResult, camelCase=TRUE)
 \details{ The function only requires a mixRasch result. The camelCase option is available so results can be exported to other software that might not supprt some types of R names (e.g., names with "."s in them).
 }
 \value{
-  \item{max.change }{The largest model parameter change in each class in the last iteration of the estimation.}
-  \item{iter }{The number of completed iterations.}
-  \item{converge.flag }{Indicates if convergence was reached.}
   \item{model }{Reports which model was estimated.}
+  \item{n.c }{Number of latent classes.}
+  \item{iter }{The number of completed iterations.}
+  \item{max.change }{The largest model parameter change in each class in the last iteration of the estimation.}
+  \item{converge.flag }{Indicates if convergence was reached.}
   \item{run.time}{Reports time elapsed during estimation.}
 }
 \author{ John T. Willse }

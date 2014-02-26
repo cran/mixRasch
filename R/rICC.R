@@ -1,6 +1,7 @@
 `rICC` <- function(delt, theta, itemVector, xlim, ylim, plotTitle, 
                    xlab, ylab, col = c("black","white"), colTheme, 
-                   expectedScore=FALSE, empICC=FALSE, empOnly=FALSE, gDevice, file){
+                   expectedScore=FALSE, empICC=FALSE, empOnly=FALSE, gDevice, 
+                   file, ...){
   
   
   cutFind <- function(xxx, nCuts){
@@ -113,20 +114,20 @@
       }   	
     }
     
-    plot(values, probs[1,], col=col[1], type="l", ylim=ylim, main=plotTitle, xlab=xlab, ylab=ylab)
+    plot(values, probs[1,], col=col[1], type="l", ylim=ylim, main=plotTitle, xlab=xlab, ylab=ylab, ...)
     
     if(nCat > 2 & ! expectedScore){
       for(i in 2:nCat){
-        points(values, probs[i,], col=col[1], type="l")
+        points(values, probs[i,], col=col[1], type="l", ...)
       }
     }
     if(empICC){
-      points(meansLoc, itemMeans, type="p", col=col[2], pch=16)
-      points(meansLoc, itemMeans, type="b", col=col[1], lty=2)
+      points(meansLoc, itemMeans, type="p", col=col[2], pch=16, ...)
+      points(meansLoc, itemMeans, type="b", col=col[1], lty=2, ...)
     }
   } else{
-    plot(meansLoc, itemMeans, type="p", col=col[2], pch=16, ylim=c(0,1), main=plotTitle, xlab=xlab, ylab=ylab)
-    points(meansLoc, itemMeans, type="b", col=col[1], lty=2)
+    plot(meansLoc, itemMeans, type="p", col=col[2], pch=16, ylim=c(0,1), main=plotTitle, xlab=xlab, ylab=ylab, ...)
+    points(meansLoc, itemMeans, type="b", col=col[1], lty=2, ...)
   }	 	
   if(gDevice != "screen") dev.off()
 }

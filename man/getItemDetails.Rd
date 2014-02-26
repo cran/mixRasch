@@ -18,8 +18,6 @@ getItemDetails(raschResult, item, class=1, camelCase=TRUE)
 \details{ The function only requires a mixRasch result and an item number or name. If the analysis is a mixture analysis, the class from which the result is to be taken must be provided. The camelCase option is available so results can be exported to other software that might not supprt some types of R names (e.g., names with "."s in them).
 }
 \value{
-item.name=item, n.cat=n.cat+1, delta.i = rR$delta.i[itemSelect], SE.delta.i = rR$SE.delta.i[itemSelect], tau = rR$tau[1:n.cat,itemSelect], SE.tau = SE.tau, infit = rR$in.out[,"infit"][itemSelect], in.Z = rR$in.out[,"in.Z"][itemSelect],outfit = rR$in.out[,"outfit"][itemSelect],out.Z = rR$in.out[,"out.Z"][itemSelect])  
-  
   \item{item.name }{The name of the item.}
   \item{n.cat }{The number categories (e.g., 2 for dichotomous). }
   \item{delta.i }{Average step difficulty.}
@@ -30,6 +28,9 @@ item.name=item, n.cat=n.cat+1, delta.i = rR$delta.i[itemSelect], SE.delta.i = rR
   \item{in.Z}{The standardized infit statistic for the item}
   \item{outfit}{The outfit statistic for the item}
   \item{out.Z}{The standardized outfit statistic for the item}
+  \item{itemMean}{The item mean, based on modal class.}
+  \item{pBis}{The item-theta correlation, based on modal class.}
+  \item{bis}{The item-theta polyserial correlation, based on modal class.}
 }
 \author{ John T. Willse }
 
